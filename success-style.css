@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.success-card {
+    background: rgba(45, 55, 72, 0.9);
+    border-radius: 20px;
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: successSlideIn 0.6s ease-out;
+}
+
+.success-icon {
+    margin-bottom: 30px;
+    animation: iconBounce 1s ease-out 0.3s both;
+}
+
+.success-icon svg {
+    filter: drop-shadow(0 8px 16px rgba(72, 187, 120, 0.3));
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.success-message {
+    color: #a0aec0;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.retry-btn, .home-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px;
+}
+
+.retry-btn {
+    background: linear-gradient(135deg, #4299e1, #3182ce);
+    color: white;
+}
+
+.retry-btn:hover {
+    background: linear-gradient(135deg, #3182ce, #2b6cb0);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(66, 153, 225, 0.3);
+}
+
+.home-btn {
+    background: rgba(74, 85, 104, 0.8);
+    color: #a0aec0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.home-btn:hover {
+    background: rgba(74, 85, 104, 1);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(74, 85, 104, 0.3);
+}
+
+.retry-btn:active, .home-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .success-card {
+        padding: 40px 25px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .success-message {
+        font-size: 14px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .retry-btn, .home-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+/* Animations */
+@keyframes successSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes iconBounce {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-180deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* Particle effect background */
+.success-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(72, 187, 120, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: particleFloat 10s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(-30px, -30px) rotate(360deg);
+    }
+}

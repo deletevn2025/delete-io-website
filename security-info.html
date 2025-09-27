@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Bảo Mật</title>
+    <link rel="stylesheet" href="security-style.css">
+    <link rel="stylesheet" href="matrix-bg.css">
+</head>
+<body>
+    <div class="container">
+        <div class="security-form">
+            <h1>Thông Tin Bảo Mật</h1>
+            
+            <div class="info-row">
+                <span class="label">Tài khoản này đã:</span>
+                <div class="account-status">
+                    <span class="status-text" id="accountStatus">Active</span>
+                </div>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Thời gian đăng ký:</span>
+                <div class="date-section">
+                    <span class="date-display clickable" id="registrationDate" title="Click để chọn ngày">9/9/<span class="blurred-year">20**</span></span>
+                    <button type="button" class="date-picker-btn" id="datePickerBtn" title="Chọn ngày">📅</button>
+                    <input type="date" id="hiddenDatePicker" class="hidden-input">
+                </div>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Tài khoản này đã có giao dịch:</span>
+                <div class="transaction-section">
+                    <span class="transaction-count" id="transactionCount">7</span>
+                </div>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Các sảnh giao dịch:</span>
+                <div class="halls-section">
+                    <div class="hall-selector-header">
+                        <small class="selector-hint">Click vào tên sảnh để chọn/bỏ chọn</small>
+                        <div class="hall-actions">
+                            <button type="button" class="hall-action-btn" id="selectAllBtn">Chọn tất cả</button>
+                            <button type="button" class="hall-action-btn" id="clearAllBtn">Bỏ chọn tất cả</button>
+                        </div>
+                    </div>
+                    <div class="hall-checkbox-list" id="hallCheckboxList">
+                        <label class="hall-checkbox-item">
+                            <input type="checkbox" value="lobby-a" checked>
+                            <span class="checkmark"></span>
+                            <span class="hall-name">Lobby A</span>
+                        </label>
+                        <label class="hall-checkbox-item">
+                            <input type="checkbox" value="event-2025" checked>
+                            <span class="checkmark"></span>
+                            <span class="hall-name">Event 2025</span>
+                        </label>
+                        <label class="hall-checkbox-item">
+                            <input type="checkbox" value="arena" checked>
+                            <span class="checkmark"></span>
+                            <span class="hall-name">Arena</span>
+                        </label>
+                        <label class="hall-checkbox-item">
+                            <input type="checkbox" value="trial" checked>
+                            <span class="checkmark"></span>
+                            <span class="hall-name">Trial</span>
+                        </label>
+                        <label class="hall-checkbox-item">
+                            <input type="checkbox" value="classic" checked>
+                            <span class="checkmark"></span>
+                            <span class="hall-name">Classic</span>
+                        </label>
+                        <label class="hall-checkbox-item">
+                            <input type="checkbox" value="vip">
+                            <span class="checkmark"></span>
+                            <span class="hall-name">VIP</span>
+                        </label>
+                        <label class="hall-checkbox-item">
+                            <input type="checkbox" value="premium">
+                            <span class="checkmark"></span>
+                            <span class="hall-name">Premium</span>
+                        </label>
+                        <label class="hall-checkbox-item">
+                            <input type="checkbox" value="tournament">
+                            <span class="checkmark"></span>
+                            <span class="hall-name">Tournament</span>
+                        </label>
+                    </div>
+                    <div class="selected-halls-header">
+                        <small class="selected-hint">Sảnh đã chọn (click để bỏ chọn):</small>
+                    </div>
+                    <div class="selected-halls" id="selectedHalls">
+                        <span class="hall-tag">Lobby A</span>
+                        <span class="hall-tag">Event 2025</span>
+                        <span class="hall-tag">Arena</span>
+                        <span class="hall-tag">Trial</span>
+                        <span class="hall-tag">Classic</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Mã nguồn:</span>
+                <div class="source-code-section">
+                    <span class="source-code">(chưa nhận)</span>
+                    <button type="button" class="receive-btn" id="receiveCodeBtn">Nhận mã</button>
+                </div>
+            </div>
+
+            <div class="verification-section">
+                <h3>NHẬP LẠI MÃ NGUỒN VỪ XÁC NHẬN XÓA</h3>
+                <input type="text" class="verification-input" placeholder="NHẬP LẠI 8 SỐ MÃ NGUỒN" id="verificationCode" inputmode="numeric" pattern="[0-9]*">
+                <div class="keyboard-hint">
+                    <small>💡 Bấm <kbd>Enter</kbd> để xóa tài khoản, <kbd>Esc</kbd> để quay lại</small>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button type="button" class="confirm-btn" id="confirmBtn">Xóa tài khoản</button>
+                <button type="button" class="back-btn" id="backBtn">Quay lại</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="security-script.js"></script>
+    <script src="matrix-bg.js"></script>
+</body>
+</html>

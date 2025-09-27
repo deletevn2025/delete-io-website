@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xác Minh Tài Khoản</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="matrix-bg.css">
+</head>
+<body>
+    <div class="container">
+        <div class="verification-form">
+            <h1>Xác Minh Tài Khoản</h1>
+            
+            <form id="verificationForm">
+                <div class="form-group">
+                    <label for="accountName">TÊN TÀI KHOẢN</label>
+                    <input type="text" id="accountName" name="accountName" placeholder="Nhập tên tài khoản..." required maxlength="10">
+                    <div class="character-count" id="characterCount" style="display: none;">
+                        <span id="currentCount">0</span>/10 ký tự
+                    </div>
+                    <div class="helper-text" id="helperText" style="display: none;">
+                        Từ 6-10 ký tự. Chỉ được dùng chữ cái, số và dấu gạch dưới (_)
+                    </div>
+                </div>
+                
+                <button type="submit" class="verify-button">Tiến hành xác minh</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script src="matrix-bg.js"></script>
+</body>
+</html>

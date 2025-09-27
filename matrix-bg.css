@@ -1,0 +1,223 @@
+/* Enhanced Matrix Background Effects */
+.matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.18;
+    overflow: hidden;
+}
+
+.matrix-column {
+    position: absolute;
+    top: -150px;
+    font-family: 'Courier New', 'Consolas', monospace;
+    font-size: 13px;
+    font-weight: bold;
+    color: #00ff41;
+    text-shadow: 
+        0 0 5px #00ff41,
+        0 0 10px #00ff4180,
+        0 0 15px #00ff4160;
+    white-space: nowrap;
+    line-height: 1.2;
+    animation: matrixFall linear infinite;
+    letter-spacing: 1px;
+}
+
+/* Enhanced falling animation with glow effects */
+@keyframes matrixFall {
+    0% {
+        transform: translateY(-150px) rotateX(0deg);
+        opacity: 0;
+        filter: blur(2px);
+    }
+    5% {
+        opacity: 1;
+        filter: blur(0px);
+    }
+    85% {
+        opacity: 1;
+        filter: blur(0px);
+    }
+    95% {
+        opacity: 0.3;
+        filter: blur(1px);
+    }
+    100% {
+        transform: translateY(calc(100vh + 150px)) rotateX(360deg);
+        opacity: 0;
+        filter: blur(3px);
+    }
+}
+
+/* Different column types with varying colors and effects */
+.matrix-column.binary {
+    color: #00ff41;
+    text-shadow: 
+        0 0 5px #00ff41,
+        0 0 10px #00ff4180,
+        0 0 20px #00ff4140;
+}
+
+.matrix-column.hex {
+    color: #4299e1;
+    text-shadow: 
+        0 0 5px #4299e1,
+        0 0 10px #4299e180,
+        0 0 20px #4299e140;
+}
+
+.matrix-column.crypto {
+    color: #ed8936;
+    text-shadow: 
+        0 0 5px #ed8936,
+        0 0 10px #ed893680,
+        0 0 20px #ed893640;
+    font-size: 14px;
+}
+
+.matrix-column.security {
+    color: #e53e3e;
+    text-shadow: 
+        0 0 5px #e53e3e,
+        0 0 10px #e53e3e80,
+        0 0 20px #e53e3e40;
+    font-size: 16px;
+}
+
+.matrix-column.special {
+    color: #9f7aea;
+    text-shadow: 
+        0 0 5px #9f7aea,
+        0 0 10px #9f7aea80,
+        0 0 20px #9f7aea40;
+    animation-duration: 8s !important;
+}
+
+/* Enhanced encrypted background with animated gradients */
+.encrypted-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: 
+        /* Animated gradient overlay */
+        linear-gradient(45deg, 
+            rgba(0, 255, 65, 0.03) 0%, 
+            transparent 25%, 
+            rgba(66, 153, 225, 0.03) 50%, 
+            transparent 75%, 
+            rgba(237, 137, 54, 0.03) 100%),
+        /* Radial gradients */
+        radial-gradient(circle at 20% 20%, rgba(0, 255, 65, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(66, 153, 225, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(159, 122, 234, 0.02) 0%, transparent 70%);
+    z-index: -2;
+    animation: gradientShift 20s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+        filter: hue-rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg) scale(1.05);
+        filter: hue-rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+        filter: hue-rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg) scale(1.05);
+        filter: hue-rotate(270deg);
+    }
+}
+
+/* Particle effects */
+.matrix-particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #00ff41;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #00ff41;
+    animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(100vh) translateX(0px);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) translateX(50px);
+        opacity: 0;
+    }
+}
+
+/* Code fragments that occasionally appear */
+.code-fragment {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    color: rgba(0, 255, 65, 0.6);
+    white-space: nowrap;
+    animation: codeFloat 15s linear infinite;
+    z-index: -1;
+}
+
+@keyframes codeFloat {
+    0% {
+        transform: translateX(-100px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(100vw) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .matrix-column {
+        font-size: 11px;
+    }
+    
+    .matrix-column.crypto,
+    .matrix-column.security {
+        font-size: 12px;
+    }
+    
+    .matrix-bg {
+        opacity: 0.15;
+    }
+}
+
+@media (max-width: 480px) {
+    .matrix-column {
+        font-size: 10px;
+    }
+    
+    .matrix-bg {
+        opacity: 0.12;
+    }
+}
